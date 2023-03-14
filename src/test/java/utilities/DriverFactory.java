@@ -24,7 +24,7 @@ public class DriverFactory {
 
         URL gridUrl = null;
         try{
-            gridUrl = new URL("");
+            gridUrl = new URL("https://www.mortgagecalculator.org/");
         }catch (MalformedURLException e){
             e.printStackTrace();
         }
@@ -40,7 +40,9 @@ public class DriverFactory {
             return new RemoteWebDriver(gridUrl, edgeOptions);
         } else {
             WebDriverManager.chromedriver().setup();
-            return new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--remote-allow-origins=*");
+            return new ChromeDriver(options);
         }
     });
 
