@@ -6,10 +6,13 @@ import org.testng.annotations.Test;
 import utilities.DateUtils;
 import utilities.ReadConfigFiles;
 
+import java.net.URL;
+
 public class TestNgMavenExampleTest {
     private static final Logger LOGGER = LogManager.getLogger(TestNgMavenExampleTest.class);
     @Test
     public void run(){
-        LOGGER.info(DateUtils.returnNextMonth());
+        String browserUrl = ReadConfigFiles.getPropertyValues("URL");
+        System.out.println(browserUrl);
     }
 }
