@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utilities.DriverFactory;
 
-import java.net.URL;public class SeleniumGridEdge {
+public class SeleniumGridEdge {
     @Test
     public void awsDockerWithEdge(){
         WebDriver driver = DriverFactory.getInstance().getDriver();
