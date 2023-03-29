@@ -54,9 +54,7 @@ public class DriverFactory {
 // It will not allow to create an object outside from this class
 private DriverFactory() {
     // Empty constructor
-}
-
-    private static final DriverFactory instance = new DriverFactory();
+}private static final DriverFactory instance = new DriverFactory();
 
     public static DriverFactory getInstance() {
         return instance;
@@ -68,9 +66,10 @@ private DriverFactory() {
         // If we do not provide any "environment" that is null, it will go to local
         //Similarly if we don't provide any browser that is null, it will go to chrome
         URL gridUrl = null;
+        ChromeOptions chromeOptions = new ChromeOptions();
 
         try {
-            gridUrl = new URL(ReadConfigFiles.getPropertyValues("GridURL"));
+            gridUrl = new URL(ReadConfigFiles.getPropertyValues("GridUrl"));
             // config.properties to change the "GridUrl"
 
         } catch (MalformedURLException e) {
@@ -78,7 +77,6 @@ private DriverFactory() {
         }
 
         if (environment.equals("remote") && browser.equals("chrome")) {
-            ChromeOptions chromeOptions = new ChromeOptions();
             return new RemoteWebDriver(gridUrl, chromeOptions);
         } else if (environment.equals("remote") && browser.equals("firefox")) {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -88,10 +86,10 @@ private DriverFactory() {
             return new RemoteWebDriver(gridUrl, edgeOptions);
         } else {
             WebDriverManager.chromedriver().setup();
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--remote-allow-origins=*");
-            return new ChromeDriver();
+            chromeOptions.addArguments("--remote-allow-origins=*");
+            return new ChromeDriver(chromeOptions);
         }
+
     });
 
     public WebDriver getDriver() {
