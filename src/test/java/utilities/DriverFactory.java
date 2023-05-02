@@ -13,17 +13,16 @@ public class DriverFactory {
     // Empty constructor
 }
 private static final DriverFactory instance = new DriverFactory();
-
     public static DriverFactory getInstance() {
         return instance;
     }
-
     ThreadLocal<WebDriver> driver = ThreadLocal.withInitial(() -> {
         String environment = System.getProperty("environment") == null ? "local" : System.getProperty("environment");
         String browser = System.getProperty("browser") == null ? "chrome" : System.getProperty("browser");
         // If we do not provide any "environment" that is null, it will go to local
         //Similarly if we don't provide any browser that is null, it will go to chrome
         URL gridUrl = null;
+
         ChromeOptions chromeOptions = new ChromeOptions();
 
         try {

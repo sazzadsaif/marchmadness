@@ -1,10 +1,7 @@
 package utilities;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.sql.*;
-
 public class SqlConnector {
     private static final String userName = ReadConfigFiles.getPropertyValues("DbUser");
     private static final String password = ReadConfigFiles.getPropertyValues("DbPassword");
@@ -17,13 +14,6 @@ public class SqlConnector {
         sqlConn = DriverManager.getConnection(Url,userName,password);
         return sqlConn;
     }
-
-    /**
-     * Reading data from the database
-     * @param sqlQuery is the method parameter to pass the SQL Query
-     * @return a ResultSet object
-     * @throws SQLException
-     */
     public static ResultSet readData(String sqlQuery) throws SQLException {
         ResultSet rs = null; //Object of the ResultSet class
         Connection conn = null;

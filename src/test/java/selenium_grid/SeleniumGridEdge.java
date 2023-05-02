@@ -5,12 +5,12 @@ import org.testng.annotations.Test;
 import utilities.DriverFactory;
 
 public class SeleniumGridEdge {
+    DriverFactory dfDriver = DriverFactory.getInstance();
     @Test
     public void awsDockerWithEdge(){
-        WebDriver driver = DriverFactory.getInstance().getDriver();
-        driver.get("https://stackoverflow.com/");
-        System.out.println(driver.getTitle());
-        driver.quit();
+        dfDriver.getDriver().get("https://stackoverflow.com/");
+        System.out.println(dfDriver.getDriver().getTitle());
+        dfDriver.removeDriver();
     }
 
     }

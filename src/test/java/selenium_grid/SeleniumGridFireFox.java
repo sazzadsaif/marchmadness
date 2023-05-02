@@ -4,12 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import utilities.DriverFactory;
 public class SeleniumGridFireFox {
+    DriverFactory dfDriver = DriverFactory.getInstance();
     @Test
     public void executeInAwsDockerFirefox(){
-        WebDriver driver = DriverFactory.getInstance().getDriver();
-        driver.get("https://www.cnbc.com/");
-        System.out.println(driver.getTitle());
-        driver.quit();
+        dfDriver.getDriver().get("https://www.cnbc.com/");
+        System.out.println(dfDriver.getDriver().getTitle());
+        dfDriver.removeDriver();
     }
     }
 
