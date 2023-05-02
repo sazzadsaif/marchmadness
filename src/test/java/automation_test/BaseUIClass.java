@@ -15,6 +15,7 @@ import utilities.ScreenCapture;
 
 public class BaseUIClass {
     public WebDriver driver;
+    DriverFactory dfDriver = DriverFactory.getInstance();
     public Logger LOGGER = LogManager.getLogger(this.getClass().getName());
     String testCaseName = String.format("-----Test: %s-----",this.getClass().getName());
     String endTestCase = String.format("-----Test End:%s-----",this.getClass().getName());
@@ -22,7 +23,7 @@ public class BaseUIClass {
     @BeforeClass
     public void addThread(){
         ThreadContext.put("threadName",this.getClass().getName());
-        driver = DriverFactory.getInstance().getDriver();
+        driver = dfDriver.getDriver();
     }
     @BeforeMethod
     public void openBrowser(){

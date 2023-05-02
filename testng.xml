@@ -8,28 +8,28 @@
             <class name="automation_test.mortgage_calculator.aprRateCalculation"/>
         </classes>
     </test>
-<!--    <test name="PHPTravel">-->
-<!--        <classes>-->
-<!--            <class name="automation_test.php_travels.TestNgWebDriver"/>-->
-<!--        </classes>-->
+    <test name="PHPTravel">
+        <classes>
+            <class name="automation_test.php_travels.TestNgWebDriver"/>
+        </classes>
 
-<!--    </test>-->
-<!--    <test name="TestNg">-->
-<!--        <classes>-->
-<!--            <class name="playGround.TestNgMavenExampleTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="APITest">-->
-<!--       <classes>-->
-<!--           <class name="api_test.SimpleGetTest"/>-->
-<!--           <class name="api_test.GetTestWithPathVariable"/>-->
-<!--           <class name="api_test.GetTestWithQueryParameters"/>-->
-<!--           <class name="api_test.SimplePostTest"/>-->
-<!--           <class name="api_test.SimplePatchTest"/>-->
-<!--           <class name="api_test.SimplePutTest"/>-->
-<!--           <class name="api_test.SimpleDeleteTest"/>-->
-<!--       </classes>-->
-<!--    </test>-->
+    </test>
+    <test name="TestNg">
+        <classes>
+            <class name="playGround.TestNgMavenExampleTest"/>
+        </classes>
+    </test>
+    <test name="APITest">
+       <classes>
+           <class name="api_test.SimpleGetTest"/>
+           <class name="api_test.GetTestWithPathVariable"/>
+           <class name="api_test.GetTestWithQueryParameters"/>
+           <class name="api_test.SimplePostTest"/>
+           <class name="api_test.SimplePatchTest"/>
+           <class name="api_test.SimplePutTest"/>
+           <class name="api_test.SimpleDeleteTest"/>
+       </classes>
+    </test>
     <test name="SeleniumGrid">
         <classes>
             <class name="selenium_grid.SeleniumGridChrome"/>
